@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{%block content %}
+<h1>Todolist Page</h1>
+<table>
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>name</th>
+            <th>email</th>
+            <th>mobile</th>
+            <th>description</th>
+         </tr>
+        
+    </thead>
+
+    <tbody>
+
+        {%for todo in all%}
+        <tr>
+            
+            <td>{{todo.title}}</td>
+            <td>{{todo.name}}</td>
+            <td>{{todo.email}}</td>
+            <td>{{todo.mobile}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.create_at}}</td>
+            <td>{{todo.updated_at}}</td>
+
+            <td>
+            <a href="{%url 'todo:todoedit' todo.id%}">
+                <button>update</button>
+            </a>
+
+            <a href="{%url 'todo:tododelete' todo.id%}">
+                <button>Delete</button>
+            </a>
+            </td>   
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

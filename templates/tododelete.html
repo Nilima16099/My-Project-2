@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block content%}
+<form method="post">
+<h1>Are you sure?</h1>
+<p> Are you sure you want to delete "{{todo.title}}"? All of the following objects and their</p>
+{%csrf_token%}
+<button type="submit" name="tododelete">Delete Your Review</button>
+</form>
+
+{%endblock%}

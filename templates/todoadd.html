@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{%block content %}
+<h1>todo Page</h1>
+<div>
+    <form method="POST">
+        <h1>Add Your Valueable Feedback</h1>
+        {%csrf_token%}
+        {{forms.as_p}}
+        <button type="submit">Submit your Feedback</button>
+    </form>
+</div>
+{%endblock%}
